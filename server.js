@@ -4,6 +4,6 @@ proxy.createServer({
     originWhitelist: [],
     requireHeader: [],
     removeHeaders: ['user-agent']
-}).listen(port, '0.0.0.0', function() {
-    console.log('Running CORS Anywhere on ::' + port + '::');
+}).listen(process.env.PORT || port, function() {
+    console.log('Running CORS Anywhere on ::' + (process.env.PORT || port )+ '::');
 });
