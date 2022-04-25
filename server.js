@@ -1,9 +1,11 @@
+require('dotenv').config()
+
 const { port } = require('./config.json');
 const proxy = require('cors-anywhere');
 proxy.createServer({
     originWhitelist: [],
     requireHeader: [],
     removeHeaders: ['user-agent']
-}).listen(process.env.PORT || port, function() {
-    console.log('Running CORS Anywhere on ::' + (process.env.PORT || port )+ '::');
+}).listen( port ||  process.env.PORT, function() {
+    console.log('Running CORS Anywhere on ::' + (port || process.env.PORT) + '::');
 });
