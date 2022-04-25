@@ -1,7 +1,7 @@
 require('dotenv').config()
 
 const { port } = require('./config.json');
-const PORT =  process.env.PORT
+const PORT =  process.env.PORT || 443;
 const proxy = require('cors-anywhere');
 proxy.createServer({
     originWhitelist: [],
